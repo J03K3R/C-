@@ -1,0 +1,18 @@
+//Simple DNS Spoofer
+//from ISBN 978-1-59327-750-5
+
+//create dns server template
+var template = new DnsServerTemplate();
+
+//Set the response address
+template.ResponseAddress = "IPV4Address";
+template.ResponseAddress6 = "IPV6Address";
+template.ReverseDns = "REVERSEDNS";
+
+//Start DNS Server
+var service = template.Create();
+service.Start();
+WriteLine("made {0}", service);
+WriteLine("press enter to exit....");
+ReadLine();
+service.Stop();
